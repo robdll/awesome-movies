@@ -4,6 +4,6 @@ import movieReducer from './movieReducer'
 
 export const store = configureStore({
   reducer: {
-    movies: movieReducer,
+    movieState: movieReducer,
   },
 })
