@@ -3,29 +3,36 @@
 .cover {
     max-width: 92px;
     grid-row: 1 / -1;
+    border: 2px solid lightgray;
 }
 
 .resultsTable {
-    width: 90%;
+    max-width: 95%;
 }
 
 .resultRow {
     display: grid;
-    grid-template-columns: 92px repeat(2,1fr);
-    grid-template-rows: 50% 50%;
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: auto auto;
     margin-bottom: 10px;
     column-gap: 15px;
 }
 
 .title {
-    grid-column: 2 / -1;
     justify-self: flex-start;
     align-self: flex-end;
     text-align: left;
     font-size: .8rem;
 }
 
-.action {
+.actions {
     align-self: center;
     justify-self: center;
+}
+
+.svg {
+    height: 20px;
+    width: 20px;
+    margin: 10px;
+    cursor: pointer;
 }
