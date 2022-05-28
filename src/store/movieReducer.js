@@ -13,6 +13,9 @@ export const fetchMovies = createAsyncThunk(
 
 const initialState = {
   movies: [],
+  favorites: [],
+  watchLater: [],
+  tab: 'search',
   isLoading: false,
 }
 
@@ -20,11 +23,20 @@ export const movieSlice = createSlice({
   name: 'movies',
   initialState,
   reducers: {
-    add: (state) => {
-      state.movies.push({
-        url: `https://via.placeholder.com/80x120/0000FF/808080`,
-        title: 'my title',
-      })
+    tabSelection: (state, action) => {
+      state.tab = action.payload;
+    },
+    addFavorite: (state, action) => {
+      const existInList = state.favorites.find( item => item.id === action.payload.id );
+      if(!existInList) {
+        state.favorites.push(action.payload);
+      }
+    },
+    addWatchLater: (state, action) => {
+      const existInList = state.watchLater.find( item => item.id === action.payload.id );
+      if(!existInList) {
+        state.watchLater.push(action.payload);
+      }
     },
   },
   extraReducers: (builder) => {
@@ -48,6 +60,6 @@ export const movieSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { add } = movieSlice.actions
+export const { addFavorite, addWatchLater, tabSelection } = movieSlice.actions
 
 export default movieSlice.reducer

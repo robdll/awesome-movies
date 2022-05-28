@@ -1,0 +1,17 @@
+@import '../../styles/mixin.scss';
+
+.Tabs {
+  @include flex-container(row);
+  justify-content: flex-start;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+
+.tab {
+  margin: 0 10px;
+  background: lightgray;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 25px;
+  cursor: pointer;
+}
