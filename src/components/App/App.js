@@ -1,5 +1,6 @@
+// Styles
 import styles from './App.module.scss';
-
+// Components
 import SearchBox from '../SearchBox/SearchBox';
 import ResultsTable from '../ResultsTable/ResultsTable';
 
