@@ -31,8 +31,11 @@ function SearchBox() {
       startFetching()
     }
   }
+
   const startFetching = () => {
+    if(searchValue !== '') {
       dispatch(fetchMovies(searchValue))
+    } 
   }
 
   return (
