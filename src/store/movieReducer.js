@@ -30,12 +30,16 @@ export const movieSlice = createSlice({
       const existInList = state.favorites.find( item => item.id === action.payload.id );
       if(!existInList) {
         state.favorites.push(action.payload);
+      } else {
+        state.favorites = state.favorites.filter(item => item.id !== action.payload.id)
       }
     },
     addWatchLater: (state, action) => {
       const existInList = state.watchLater.find( item => item.id === action.payload.id );
       if(!existInList) {
         state.watchLater.push(action.payload);
+      } else {
+        state.watchLater = state.watchLater.filter(item => item.id !== action.payload.id)
       }
     },
   },
