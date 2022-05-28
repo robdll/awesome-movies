@@ -1,7 +1,12 @@
 import styles from './SearchBox.module.scss';
 import { useState } from 'react';
 
+import { useDispatch } from 'react-redux'
+import { fetchMovies } from '../../store/movieReducer'
+
 function SearchBox() {
+
+  const dispatch = useDispatch()
 
   const PLACEHOLDER_DEFAULT = 'Search for a movie title';
   const [searchValue, setSearchValue] = useState('');
@@ -21,6 +26,8 @@ function SearchBox() {
     if(searchValue === '') {
       setPlaceholder(PLACEHOLDER_DEFAULT)
       setInputClasses(`${styles.input}`);
+    } else {
+      dispatch(fetchMovies(searchValue))
     }
   }
 
