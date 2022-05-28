@@ -13,6 +13,7 @@ export const fetchMovies = createAsyncThunk(
 
 const initialState = {
   movies: [],
+  isLoading: false,
 }
 
 export const movieSlice = createSlice({
@@ -27,6 +28,9 @@ export const movieSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(fetchMovies.pending, (state, action) => {
+      state.isLoading = true;
+    });
     builder.addCase(fetchMovies.fulfilled, (state, action) => {
       const basicUrl = `https://image.tmdb.org/t/p/w92`
       const movies = action.payload.map( item => {
@@ -34,9 +38,11 @@ export const movieSlice = createSlice({
         return item;
       })
       state.movies = movies;
+      state.isLoading = false;
     });
     builder.addCase(fetchMovies.rejected, (state, action) => {
       state.movies = [];
+      state.isLoading = false;
     });
   },
 })

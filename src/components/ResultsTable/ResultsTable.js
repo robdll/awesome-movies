@@ -1,8 +1,11 @@
 import styles from './ResultsTable.module.scss';
 import { useSelector } from 'react-redux';
+import Loader from '../Loader/Loader';
 
 function ResultsTable() {
   const results = useSelector((state) => state.movieState.movies);
+  const isLoadingResults = useSelector((state) => state.movieState.isLoading);
+  
   const rows = results.map( (item, idx) => {
     const coverCell = <img className={styles.cover} src={item.poster_path} alt={`${item.title} cover`} />
     const titleCell = <div className={styles.title}><b>Title:</b> {item.title}</div>
@@ -16,11 +19,13 @@ function ResultsTable() {
       {actionsCell}
     </div>
   })
-  return (
-    <article className={styles.resultsTable}>
-        {rows}
-    </article>
-  );
+  return isLoadingResults ? 
+    <Loader />
+    : (
+      <article className={styles.resultsTable}>
+          {rows}
+      </article>
+    );
 }
 
 export default ResultsTable;
