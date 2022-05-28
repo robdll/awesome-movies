@@ -1,0 +1,33 @@
+
+.Movie {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: auto auto;
+    margin-bottom: 10px;
+    column-gap: 15px;
+}
+
+.cover {
+    max-width: 92px;
+    grid-row: 1 / -1;
+    border: 2px solid lightgray;
+}
+
+.title {
+    justify-self: flex-start;
+    align-self: flex-end;
+    text-align: left;
+    font-size: .8rem;
+}
+
+.actions {
+    align-self: center;
+    justify-self: flex-start;
+}
+
+.svg {
+    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}

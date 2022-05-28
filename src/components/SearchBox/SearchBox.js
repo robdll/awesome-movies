@@ -50,7 +50,7 @@ function SearchBox() {
         placeholder={placeholder}>
         </input>
         <span className={styles.lens} onClick={startFetching}>
-          <img src="./lens.png" alt='search icon'></img>
+          <img src="./awesome-movies/lens.png" alt='search icon'></img>
         </span>
     </div>
     );
