@@ -1,0 +1,31 @@
+@import '../../styles/mixin.scss';
+
+.cover {
+    max-width: 92px;
+    grid-row: 1 / -1;
+}
+
+.resultsTable {
+    width: 90%;
+}
+
+.resultRow {
+    display: grid;
+    grid-template-columns: 92px repeat(2,1fr);
+    grid-template-rows: 50% 50%;
+    margin-bottom: 10px;
+    column-gap: 15px;
+}
+
+.title {
+    grid-column: 2 / -1;
+    justify-self: flex-start;
+    align-self: flex-end;
+    text-align: left;
+    font-size: .8rem;
+}
+
+.action {
+    align-self: center;
+    justify-self: center;
+}
