@@ -1,15 +1,28 @@
 .searchBox {
     margin: 30px 10px;
+    position: relative;
 }
 
 .input {
     border-radius: 25px;
     padding: 10px 15px;
     border: 1px solid lightgray;
-    text-align: unset;
 }
 
-.alignLeft {
-    text-align: left;
+.lens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: lightgray;
+    padding: 5px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
+.lens img {
+    width: 20px;
+    height: 20px;
+}

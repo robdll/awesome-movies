@@ -4,7 +4,6 @@
   @include flex-container(column);
   justify-content: flex-start;
   text-align: center;
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,203,97,1) 100%);
-  min-height: 100vh;
+  background: rgb(251,203,97);
+  background: linear-gradient(180deg, rgba(251,203,97,1) 0%, rgba(255,255,255,1) 100%);min-height: 100vh;
 }

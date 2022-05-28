@@ -11,29 +11,44 @@ function SearchBox() {
   const PLACEHOLDER_DEFAULT = 'Search for a movie title';
   const [searchValue, setSearchValue] = useState('');
   const [placeholder, setPlaceholder] = useState(PLACEHOLDER_DEFAULT);
-  const [inputClasses, setInputClasses] = useState(`${styles.input}`);
 
-  const handleClick = (e) => {
+  const handleChange = (e) => {
     setSearchValue(e.target.value)
   }
   
   const handleFocus = (e) => {
     setPlaceholder('')
-    setInputClasses(`${styles.input} ${styles.alignLeft}`);
   }
 
   const handleBlur = (e) => {
     if(searchValue === '') {
       setPlaceholder(PLACEHOLDER_DEFAULT)
-      setInputClasses(`${styles.input}`);
-    } else {
-      dispatch(fetchMovies(searchValue))
     }
+  }
+
+  const handleKeyPress = (e) => {
+    if(e.key === 'Enter') {
+      startFetching()
+    }
+  }
+  const startFetching = () => {
+      dispatch(fetchMovies(searchValue))
   }
 
   return (
     <div className={styles.searchBox}>
-      <input onFocus={handleFocus} onBlur={handleBlur} className={inputClasses} value={searchValue} onChange={handleClick} placeholder={placeholder}></input>
+      <input 
+        onFocus={handleFocus} 
+        onBlur={handleBlur} 
+        onKeyPress={handleKeyPress} 
+        onChange={handleChange}
+        className={styles.input} 
+        value={searchValue}  
+        placeholder={placeholder}>
+        </input>
+        <span className={styles.lens} onClick={startFetching}>
+          <img src="./lens.png" alt='search icon'></img>
+        </span>
     </div>
     );
   }
