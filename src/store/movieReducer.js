@@ -1,4 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+
+import { searchMovies } from '../services/MovieApi'
+
+export const fetchMovies = createAsyncThunk(
+  'movie/searchMovie',
+  async (title, thunkAPI) => {
+    const response = await searchMovies(title)
+    return response.results
+  }
+)
 
 
 const initialState = {
@@ -15,6 +25,14 @@ export const movieSlice = createSlice({
         title: 'my title',
       })
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchMovies.fulfilled, (state, action) => {
+      state.movies = action.payload
+    });
+    builder.addCase(fetchMovies.rejected, (state, action) => {
+      state.movies = [];
+    });
   },
 })
 
