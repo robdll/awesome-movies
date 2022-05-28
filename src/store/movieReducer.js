@@ -28,7 +28,7 @@ export const movieSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchMovies.fulfilled, (state, action) => {
-      const basicUrl = `https://image.tmdb.org/t/p/w342`
+      const basicUrl = `https://image.tmdb.org/t/p/w92`
       const movies = action.payload.map( item => {
         item.poster_path = item.poster_path ? `${basicUrl}${item.poster_path}` : `./not_available.jpeg`
         return item;
