@@ -1,5 +1,5 @@
 import {store} from '../store/store'
-import movieReducer, { addFavorite, addWatchLater, tabSelection} from '../store/movieReducer'
+import movieReducer, { addFavorite, addWatchLater, tabSelection, toggleModal} from '../store/movieReducer'
 
 const movie = {
     adult: false,
@@ -54,7 +54,10 @@ describe('Run redux tests', () => {
             ],
             watchLater: [],
             tab: 'search',
-            isLoading: false
+            isLoading: false,
+            isLoadingTrailer: false,
+            modal: false,
+            trailer: {}
         })
     })
 
@@ -65,7 +68,10 @@ describe('Run redux tests', () => {
             favorites: [],
             watchLater: [],
             tab: 'search',
-            isLoading: false
+            isLoading: false,
+            isLoadingTrailer: false,
+            modal: false,
+            trailer: {}
         })
     })
 
@@ -78,7 +84,10 @@ describe('Run redux tests', () => {
             ],
             favorites: [],
             tab: 'search',
-            isLoading: false
+            isLoading: false,
+            isLoadingTrailer: false,
+            modal: false,
+            trailer: {}
         })
     })
 
@@ -89,7 +98,10 @@ describe('Run redux tests', () => {
             watchLater: [],
             favorites: [],
             tab: 'search',
-            isLoading: false
+            isLoading: false,
+            isLoadingTrailer: false,
+            modal: false,
+            trailer: {}
         })
     })
 
@@ -100,7 +112,23 @@ describe('Run redux tests', () => {
             watchLater: [],
             favorites: [],
             tab: 'favorites',
-            isLoading: false
+            isLoading: false,
+            isLoadingTrailer: false,
+            modal: false,
+            trailer: {}
+        })
+    })
+
+    it('Should handle modal status change', () => {
+        expect(movieReducer(state, toggleModal())).toEqual({
+            movies: [],
+            watchLater: [],
+            favorites: [],
+            tab: 'search',
+            isLoading: false,
+            isLoadingTrailer: false,
+            modal: true,
+            trailer: {}
         })
     })
 
