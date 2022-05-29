@@ -22,6 +22,9 @@
 
 2. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+3. in case you are having issue with seeing images, it is probably because project homepage has been set to `/awesome-movies`. Only if this happens, set the following env variable:
+> export PUBLIC_URL=http://localhost:3000
+
 # Test 
 
 1. withing the project folder run:
