@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "http://localhost:3000/static/css/main.3a5b9def.css",
-    "main.js": "http://localhost:3000/static/js/main.a682e90f.js",
-    "static/js/787.e1e3a988.chunk.js": "http://localhost:3000/static/js/787.e1e3a988.chunk.js",
-    "index.html": "http://localhost:3000/index.html",
-    "main.3a5b9def.css.map": "http://localhost:3000/static/css/main.3a5b9def.css.map",
-    "main.a682e90f.js.map": "http://localhost:3000/static/js/main.a682e90f.js.map",
-    "787.e1e3a988.chunk.js.map": "http://localhost:3000/static/js/787.e1e3a988.chunk.js.map"
+    "main.css": "http://localhost:3000/awesome-movies/static/css/main.3a5b9def.css",
+    "main.js": "http://localhost:3000/awesome-movies/static/js/main.e4119102.js",
+    "static/js/787.e1e3a988.chunk.js": "http://localhost:3000/awesome-movies/static/js/787.e1e3a988.chunk.js",
+    "index.html": "http://localhost:3000/awesome-movies/index.html",
+    "main.3a5b9def.css.map": "http://localhost:3000/awesome-movies/static/css/main.3a5b9def.css.map",
+    "main.e4119102.js.map": "http://localhost:3000/awesome-movies/static/js/main.e4119102.js.map",
+    "787.e1e3a988.chunk.js.map": "http://localhost:3000/awesome-movies/static/js/787.e1e3a988.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a5b9def.css",
-    "static/js/main.a682e90f.js"
+    "static/js/main.e4119102.js"
   ]
 }
