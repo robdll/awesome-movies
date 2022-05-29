@@ -41,6 +41,7 @@ function SearchBox() {
   return (
     <div className={styles.searchBox}>
       <input 
+        data-testid="search-input"
         onFocus={handleFocus} 
         onBlur={handleBlur} 
         onKeyPress={handleKeyPress} 
@@ -49,7 +50,7 @@ function SearchBox() {
         value={searchValue}  
         placeholder={placeholder}>
         </input>
-        <span className={styles.lens} onClick={startFetching}>
+        <span className={styles.lens} onClick={startFetching} data-testid="search-icon">
           <img src="./awesome-movies/lens.png" alt='search icon'></img>
         </span>
     </div>

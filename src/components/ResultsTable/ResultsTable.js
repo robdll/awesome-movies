@@ -30,7 +30,7 @@ function ResultsTable() {
   return isLoadingResults ? 
     <Loader />
     : (
-      <article className={styles.resultsTable}>
+      <article className={styles.resultsTable} data-testid="result-table">
           {rows}
       </article>
     );
